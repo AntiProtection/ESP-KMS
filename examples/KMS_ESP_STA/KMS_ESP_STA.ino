@@ -30,20 +30,6 @@ void KmsCallback(const REQUEST* const request, RESPONSE* const response, QWORD* 
 
 void setup() {
 	WiFi.mode(WIFI_STA);
-#ifdef ESP32
-	WiFi.onEvent([](WiFiEvent_t event, WiFiEventInfo_t info) {
-		WiFi.disconnect(true);
-		WiFi.begin(STA_SSID, STA_PASS);
-		if (WiFi.waitForConnectResult() != WL_CONNECTED) ESP.restart();
-		}, SYSTEM_EVENT_STA_DISCONNECTED);
-#elif defined(ESP8266)
-	WiFi.onStationModeDisconnected([](const WiFiEventStationModeDisconnected& event)
-		{
-			WiFi.disconnect(true);
-			WiFi.begin(STA_SSID, STA_PASS);
-			if (WiFi.waitForConnectResult() != WL_CONNECTED) ESP.restart();
-		});
-#endif
 	WiFi.begin(STA_SSID, STA_PASS);
 	WiFi.waitForConnectResult();
 	MDNS.begin(MDNS_NAME);
