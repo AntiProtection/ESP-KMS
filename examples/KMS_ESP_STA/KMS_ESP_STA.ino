@@ -9,7 +9,7 @@
 
 static const char* STA_SSID = "********";
 static const char* STA_PASS = "********";
-static const char* MDNS_NAME = "KMS";
+static const char* MDNS_NAME = "ESP-KMS";
 static const int KMS_PORT = 1688;
 
 static const WCHAR ePID[] = L"00000-00000-000-000000-00-0000-0000.0000-0000000";
