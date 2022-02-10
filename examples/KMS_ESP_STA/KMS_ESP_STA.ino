@@ -31,7 +31,6 @@ void KmsCallback(const REQUEST* const request, RESPONSE* const response, QWORD* 
 void setup() {
 	WiFi.mode(WIFI_STA);
 	WiFi.begin(STA_SSID, STA_PASS);
-	WiFi.waitForConnectResult();
 	MDNS.begin(MDNS_NAME);
 	StartKMSServer(KMS_PORT, KmsCallback);
 }
