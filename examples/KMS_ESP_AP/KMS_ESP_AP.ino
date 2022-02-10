@@ -7,7 +7,7 @@
 #endif
 #include "libkms.h"
 
-static const char* STA_SSID = "ESP-KMS";
+static const char* AP_SSID = "ESP-KMS";
 static const char* MDNS_NAME = "ESP-KMS";
 static const int KMS_PORT = 1688;
 
@@ -29,7 +29,7 @@ void KmsCallback(const REQUEST* const request, RESPONSE* const response, QWORD* 
 
 void setup() {
 	WiFi.mode(WIFI_AP);
-	WiFi.softAP(STA_SSID);
+	WiFi.softAP(AP_SSID);
 	MDNS.begin(MDNS_NAME);
 	StartKMSServer(KMS_PORT, KmsCallback);
 }
