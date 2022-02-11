@@ -207,7 +207,7 @@ int rpcBind(const RPC_BIND_REQUEST* const Request, RPC_BIND_RESPONSE* Response, 
 	else
 	{
 		strcpy((char*)(Response->SecondaryAddress), localPort);
-		portNumberSize = strlen((char*)Response->SecondaryAddress) + 1;
+		portNumberSize = (uint_fast8_t)strlen((char*)Response->SecondaryAddress) + 1;
 		Response->SecondaryAddressLength = portNumberSize;
 	}
 
