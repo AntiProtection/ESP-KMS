@@ -11,7 +11,7 @@ typedef WiFiClient SOCKET;
 bool _send(SOCKET sock, const char* data, int len);
 bool _recv(SOCKET sock, char* data, int len); 
 
-void StartKMSServer(const int port, const RequestCallback_t requestCallback, uint8_t max_clients = 10);
+void StartKMSServer(const int port, const RequestCallback_t requestCallback, uint8_t max_clients = 4);
 void StopKMSServer();
 void UpdateKMSServer();
 int GetClientCount();
