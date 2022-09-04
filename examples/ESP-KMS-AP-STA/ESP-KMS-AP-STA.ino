@@ -32,7 +32,7 @@ void KmsCallback(const REQUEST* const request, RESPONSE* const response, QWORD* 
 
 void setup() {
 	WiFi.mode(WIFI_AP_STA);
-	WiFi.softAP(AP_SSID, AP_PASS)
+	WiFi.softAP(AP_SSID, AP_PASS);
 	WiFi.begin(STA_SSID, STA_PASS);
 	MDNS.begin(MDNS_NAME);
 	StartKMSServer(KMS_PORT, KmsCallback);
