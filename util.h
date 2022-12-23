@@ -1,12 +1,19 @@
 #pragma once
 #include <Arduino.h>
+#ifdef ESP32
+#include <WiFi.h>
+#elif defined(ESP8266)
+#include <ESP8266WiFi.h>
+#endif
 
-typedef unsigned long long	QWORD;
-typedef unsigned long       DWORD;
-typedef int                 BOOL;
-typedef unsigned char       BYTE;
-typedef unsigned short      WORD;
-typedef wchar_t				WCHAR;
+typedef WiFiClient SOCKET;
+
+typedef uint64_t	QWORD;
+typedef uint32_t	DWORD;
+typedef bool	BOOL;
+typedef uint8_t	BYTE;
+typedef uint16_t	WORD;
+typedef char16_t	WCHAR;
 
 struct GUID {
 	DWORD  Data1;

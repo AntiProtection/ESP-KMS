@@ -1,5 +1,6 @@
 #include "rpc.h"
 #include "kms.h"
+#include "network.h"
 
 /* Data definitions */
 
@@ -243,7 +244,6 @@ int rpcBind(const RPC_BIND_REQUEST* const Request, RPC_BIND_RESPONSE* Response, 
 
 	for (i = 0; i < numCtxItems; i++)
 	{
-		sizeof(RPC_BIND_RESPONSE);
 		struct RPC_BIND_RESPONSE::CtxResults* result = Response->Results + i;
 		const GUID* ctxTransferSyntax = &Request->CtxItems[i].TransferSyntax;
 

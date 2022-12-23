@@ -19,7 +19,7 @@ void KmsCallback(const REQUEST* const request, RESPONSE* const response, QWORD* 
 {
 	response->Version = request->Version;
 	response->PIDSize = sizeof(ePID);
-	memcpy(response->KmsPID, ePID, sizeof(ePID));
+	memcpy(response->KmsPID, ePID, response->PIDSize);
 	response->CMID = request->CMID;
 	response->ClientTime = request->ClientTime;
 	response->Count = request->N_Policy;
